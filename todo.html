@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>To-Do con Angular JS</title>
+    <script src="angular.min.js"></script>
+    <style>
+    .ok {
+    	text-decoration: line-through;
+    }
+    </style>
+</head>
+
+<body ng-init="tareas =['
+Limpiar mi cuarto',
+'Cocinar',
+'Ir al gimnasio'
+]">
+
+<h1>Tareas por hacer</h1>
+    <p ng-repeat="tareas in tareas" class="{{ check }}">
+    <input type="checkbox" ng-model="check"
+    ng-true-value="'ok'" ng-false-value="''">
+    {{ tareas }} {{ check }}
+    </p>
+</ul>
+<input type="text" ng-model="nuevo"><br>
+<button ng-clic="tareas.push(nuevo);nuevo =''">
+Agregar
+</button>
+</body>
+</html>
